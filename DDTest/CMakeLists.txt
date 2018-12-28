@@ -51,13 +51,6 @@ find_package(DD4hep REQUIRED)
 if(DD4hep_FOUND)
 	include_directories(${DD4hep_INCLUDE_DIR})
 endif(DD4hep_FOUND)
-#include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
-#file(GLOB headersGnuplot ${headersGnuplot} ${CMAKE_CURRENT_SOURCE_DIR}/inc/*.h )
-#file(GLOB sourcesGnuplot ${sourcesGnuplot} ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp )
-
-#add_library(gnuplot SHARED ${headersGnuplot} ${sourcesGnuplot})
-#add_executable(TestGnuplot ${CMAKE_CURRENT_SOURCE_DIR}/test/example.cc)
-#target_link_libraries(TestGnuplot gnuplot)
 
 #add_executable(test_unit ${CMAKE_CURRENT_SOURCE_DIR}/src/test_units.cc)
 #target_link_libraries(test_unit ${DD4hep_LIBRARIES} ${ROOT_LIBRARIES})
