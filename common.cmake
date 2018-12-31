@@ -47,6 +47,7 @@ include_directories(AFTER SYSTEM ${ROOT_INCLUDE_DIR})
 find_package(DD4hep REQUIRED)
 if(DD4hep_FOUND)
 	include_directories(${DD4hep_INCLUDE_DIR})
+	message(STATUS "Following DD4hep Libraries linked : ${DD4hep_LIBRARIES}")
 endif(DD4hep_FOUND)
 
 #add_executable(test_unit ${CMAKE_CURRENT_SOURCE_DIR}/src/test_units.cc)
@@ -72,3 +73,13 @@ macro(build_executables EXECUTABLES)
     target_link_libraries(${TARGET_NAME} ${DD4hep_LIBRARIES} ${ROOT_LIBRARIES})
   endforeach()
 endmacro()
+
+macro(link_executables EXECUTABLES TARGET_LIBRARIES)
+  foreach(EXECUTABLE ${EXECUTABLES})
+    get_filename_component(TARGET_NAME ${EXECUTABLE} NAME_WE)
+    #add_executable(${TARGET_NAME} ${EXECUTABLE})
+    target_link_libraries(${TARGET_NAME} ${TARGET_LIBRARIES})
+  endforeach()
+endmacro()
+
+
