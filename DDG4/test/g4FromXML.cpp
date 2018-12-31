@@ -32,8 +32,9 @@ int setupG4_XML()  {
   kernel.configure();
   kernel.initialize();
   kernel.run();
-  std::cout << "Successfully executed application .... " << std::endl;
+  std::cout << "RAMAN : Successfully executed application .... " << std::endl;
   kernel.terminate();
+  std::cout << "SEHGAL : Successfully terminated application .... " << std::endl;
   return 1;
 }
 /// Main entry point as a program
