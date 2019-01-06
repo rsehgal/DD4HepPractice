@@ -1,0 +1,15 @@
+This is a very simple example for beginners.
+
+In any DD4hep base program we need atleast following
+1) A compact xml file (containing just minimum description of the detector)
+2) A Detector constructor code (THE MOST IMPORTANT ONE) , that can be  a
+   C++ (more description, little bit more technical) or
+    Python base (more readable)
+
+In this example we will just try to create a simple compact xml file
+contains just a  box description placed at origin.
+
+The Detector construct will read this xml and create an in-memory generic detector
+description model, which can be used later on for Simulation, Reconstruction,
+ Analysis, and Visualization.
+
