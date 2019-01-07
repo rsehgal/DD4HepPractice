@@ -12,4 +12,26 @@ contains just a  box description placed at origin.
 The Detector construct will read this xml and create an in-memory generic detector
 description model, which can be used later on for Simulation, Reconstruction,
  Analysis, and Visualization.
+ 
+ Steps to compile this example
+ 1) Create a build directory
+    mkdir build 
+    cd build
+ 2) Now run following cmake command
+    cmake ..
+ 3) Now compile it using make
+    make 
+    
+ This will create a various subdirectories like bin, lib.
+ 
+ For visualization of created geometry set the LD_LIBRARY_PATH
+ from within the build directory it can be set as
+ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:lib
+ 
+ Now one can visualize the geometry using geoDisplay with following command
+ geoDisplay -compact test.xml
+ 
+ This is the minimal example that will just create a hollow tube
+ 
+  
 
