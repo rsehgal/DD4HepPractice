@@ -1,7 +1,14 @@
 <lccdd>
-	<info> 
+	<info
 		title="Test Detector"
 		author="Raman Sehgal"
+		name="SimpleHollowTube"
+		url=""
+		status=""
+		version="">
+		<comment>
+			A Simple Hollow Tube
+		</comment>
 	</info>
 
 	<includes>

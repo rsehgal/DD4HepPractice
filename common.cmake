@@ -46,6 +46,7 @@ include_directories(AFTER SYSTEM ${ROOT_INCLUDE_DIR})
 
 find_package(DD4hep REQUIRED)
 if(DD4hep_FOUND)
+	set(DD4hep_DIR $ENV{DD4hep_DIR})
 	include_directories(${DD4hep_INCLUDE_DIR})
 	message(STATUS "Following DD4hep Libraries linked : ${DD4hep_LIBRARIES}")
 endif(DD4hep_FOUND)
