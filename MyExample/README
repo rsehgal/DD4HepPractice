@@ -1,15 +1,39 @@
 This is a very simple example for beginners.
 
 In any DD4hep base program we need atleast following
-1) A compact xml file (containing just minimum description of the detector)
+1) A compact xml file (containing just minimum description of the detector) 
+   Here we have compact/test.xml (just to create a hollow tube)
 2) A Detector constructor code (THE MOST IMPORTANT ONE) , that can be  a
    C++ (more description, little bit more technical) or
     Python base (more readable)
-
+    Here we have our Detector constructor in C++ src/SimpleTube.cpp
+    
 In this example we will just try to create a simple compact xml file
 contains just a  box description placed at origin.
 
 The Detector construct will read this xml and create an in-memory generic detector
 description model, which can be used later on for Simulation, Reconstruction,
  Analysis, and Visualization.
+ 
+ Steps to compile this example
+ 1) Create a build directory
+    mkdir build 
+    cd build
+ 2) Now run following cmake command
+    cmake ..
+ 3) Now compile it using make
+    make 
+    
+ This will create a various subdirectories like bin, lib.
+ 
+ For visualization of created geometry set the LD_LIBRARY_PATH
+ from within the build directory it can be set as
+ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:lib
+ 
+ Now one can visualize the geometry using geoDisplay with following command
+ geoDisplay -compact test.xml
+ 
+ This is the minimal example that will just create a hollow tube
+ 
+  
 
