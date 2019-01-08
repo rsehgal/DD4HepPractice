@@ -25,14 +25,31 @@
 
 
 	<materials> </materials>
-	<display> </display>
+
+	<display> 
+		<vis name="SimpleHollowTube_XML_vis" alpha="0.5"   r="0.6"  g="0.6"  b="0.6" showDaughters="true"  visible="true"/>
+		<vis name="SimpleHollowTube_2_XML_vis" alpha="0.6"   r="0.6"  g="0.8"  b="0.2" showDaughters="true"  visible="true"/>
+		<vis name="SimpleHollowTube_3_XML_vis" alpha="0.4"   r="0.6"  g="0.2"  b="0.8" showDaughters="true"  visible="true"/>
+	</display>
 
 	<detectors> 
 		<comment> A Simple Tube </comment>
-		<detector name="SimpleHollowTube" type="SimpleHollowTube">
+		<detector name="SimpleHollowTube_XML" type="SimpleHollowTube" vis="SimpleHollowTube_XML_vis">
 	        	<dimensions rmin="10.*cm" rmax="15.*cm" zhalf="10*cm"/>
       		</detector>
-	</detectors>
+
+                <comment> A Simple Tube  2</comment>
+                <detector name="SimpleHollowTube_2_XML" type="SimpleHollowTube2" vis="SimpleHollowTube_2_XML_vis">
+                        <dimensions rmin="6.*cm" rmax="7.*cm" zhalf="15*cm"/>
+		</detector>
+
+		<comment> A Simple Tube  3</comment>
+                <detector name="SimpleHollowTube_3_XML" type="SimpleHollowTube3" vis="SimpleHollowTube_3_XML_vis">
+                        <dimensions rmin="0.*cm" rmax="4.*cm" zhalf="20*cm"/>
+                </detector>
+
+
+        </detectors>
 
 	<limits> </limits>
 	<fields>  </fields>
