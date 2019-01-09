@@ -1,4 +1,4 @@
-This is a very simple example for beginners.
+A) This is a very simple example for beginners.
 
 In any DD4hep base program we need atleast following
 1) A compact xml file (containing just minimum description of the detector) 
@@ -35,5 +35,13 @@ description model, which can be used later on for Simulation, Reconstruction,
  
  This is the minimal example that will just create a hollow tube
  
-  
+B) IronCylinder_geo.cpp is another GOOD Detector Constructor taken from example and the corresponding XML file compact/IronCylinder.xml
+
+   Its a very good and simple example to understand the concept of module.
+   Module actually replicate the multiple copies of detector.
+   In the current example it replicate the DD4hep_CylinderShell, which
+   is actually detector constructor for Polycone, and is already built  
+   and linked to DD4hep libraries. Its a very good way to create complex
+   shapes like Polycone, Polyhedra, so that we do not have to code them
+   in our Detector Constructor.
 
