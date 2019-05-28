@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<DDDefinition xmlns="http://www.cern.ch/cms/DDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cern.ch/cms/DDL ../../../DetectorDescription/Schema/DDLSchema.xsd">
+        <IncludeSection>
+	    <Include ref="materials.xml"/>
+	</IncludeSection>
+
+	<SolidSection label="tracker.xml">
+		<Polycone name="Tracker" startPhi="0*deg" deltaPhi="360*deg">
+			<ZSection z="-150" rMin="100" rMax="150"/>
+			<ZSection z="0" rMin="100" rMax="150"/>
+			<ZSection z="150" rMin="150" rMax="200"/>
+		</Polycone>
+	</SolidSection>
+
+	<LogicalPartSection label="tracker.xml">
+		<LogicalPart name="Tracker" category="unspecified">
+			<rSolid name="Tracker"/>
+			<rMaterial name="materials:Air"/>
+		</LogicalPart>
+	</LogicalPartSection>
+
+                  
+        <PosPartSection label="">
+	    <PosPart copyNumber="2">
+        	<rParent name="tracker:Tracker"/>
+	        <rChild name="tube:TestTube"/>
+   	    </PosPart>
+  	</PosPartSection>	
+     
+
+
+</DDDefinition>

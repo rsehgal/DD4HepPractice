@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<DDDefinition xmlns="http://www.cern.ch/cms/DDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cern.ch/cms/DDL ../../../DetectorDescription/Schema/DDLSchema.xsd">
+        <IncludeSection>
+	    <Include ref="materials.xml"/>
+	</IncludeSection>
+
+	<SolidSection label="tube.xml">
+		<Tube name="TestTube" rMin="50" rMax="70" dz="180" />
+	</SolidSection>
+
+        <SolidSection label="tube.xml">
+                <Tube name="ThinTestTube" rMin="20" rMax="40" dz="200" />
+        </SolidSection>
+
+	<LogicalPartSection label="tube.xml">
+		<LogicalPart name="TestTube" category="unspecified">
+			<rSolid name="TestTube"/>
+			<rMaterial name="materials:Air"/>
+		</LogicalPart>
+	</LogicalPartSection>
+
+
+	<LogicalPartSection label="tube.xml">
+                <LogicalPart name="ThinTestTube" category="unspecified">
+                        <rSolid name="ThinTestTube"/>
+                        <rMaterial name="materials:Air"/>
+                </LogicalPart>
+        </LogicalPartSection>
+
+	<PosPartSection label="">
+            <PosPart copyNumber="2">
+                <rParent name="tube:TestTube"/>
+                <rChild name="tube:ThinTestTube"/>
+            </PosPart>
+        </PosPartSection>
+</DDDefinition>
