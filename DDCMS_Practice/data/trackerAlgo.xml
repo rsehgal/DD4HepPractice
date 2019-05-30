@@ -4,17 +4,6 @@
 	    <Include ref="materials.xml"/>
 	</IncludeSection>
 
- <!--
-	  <SolidSection label="trackerAlgo.xml">
-    <Box name="MotherOfAllBoxes" dx="1*m" dy="1*m" dz="1*m"/>
-  </SolidSection>
-  <LogicalPartSection label="trackerAlgo.xml">
-    <LogicalPart name="MotherOfAllBoxes">
-      <rMaterial name="materials:Air"/>
-      <rSolid name="MotherOfAllBoxes"/>
-    </LogicalPart> 
-  </LogicalPartSection>
-  -->
 
 	<SolidSection label="trackerAlgo.xml">
 		<Polycone name="Tracker" startPhi="0*deg" deltaPhi="360*deg">
@@ -32,7 +21,7 @@
 	</LogicalPartSection>
 
 	<Algorithm name="trackerAlgo">
-		<rParent name="world_volume"/>
+		<rParent name="trackerAlgo:Tracker"/> 
 		<Numeric name="TestValue"    value="100."/>
 		<String name="Material"      value="materials:Silicon"/>
 		<Vector name="InnerTubeVector" type="string" nEntries="2">
@@ -42,23 +31,22 @@
 
 -
 	<PosPartSection label="">
-	<!--
-	<PosPart copyNumber="1">
-      <rParent name="trackerAlgo:MotherOfAllBoxes"/>
-      <rChild name="trackerAlgo:Tracker"/>
-    </PosPart>
-    -->
-		<PosPart copyNumber="2">
+
+
+		<PosPart copyNumber="1">
 					<rParent name="trackerAlgo:Tracker"/>
 	                <rChild name="trackerAlgo:InnerTube1"/>
-	                <!--<Translation x="0" y="0" z="100"/> -->
+                    <Translation x="0" y="0" z="100"/> 	                
 		</PosPart>
-
-		<PosPart copyNumber="2">
+	
+    
+		<PosPart copyNumber="1">
                     <rParent name="trackerAlgo:InnerTube1"/>
                     <rChild name="trackerAlgo:InnerTube2"/>
                     <Translation x="0" y="0" z="100"/> 
         </PosPart>
+        
+    
 	</PosPartSection>
 	
 
