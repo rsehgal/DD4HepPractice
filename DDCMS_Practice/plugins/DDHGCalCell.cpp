@@ -149,7 +149,7 @@ static long algorithm(Detector& description, ParsingContext& ctxt, xml_h e, Sens
 
   dd4hep::Rotation3D rotation;
   glog1.placeVolume(glog2, 1, dd4hep::Transform3D(rotation,tran));
-  mother.placeVolume(glog1);
+ // mother.placeVolume(glog1);
 #ifdef EDM_ML_DEBUG
   std::cout << "DDHGCalCell: " << glog2.name() << std::endl
 				<< " number 1 position in " << glog1.name() << std::endl

@@ -30,7 +30,7 @@ static long algorithm(Detector& description, ParsingContext& ctxt, xml_h e, Sens
 		dd4hep::Solid solid = dd4hep::Tube(50., 70, 180.);
 		ns.addSolidNS(ns.prepend(innerTubeVector[i]), solid);
 		dd4hep::Volume glog1 = dd4hep::Volume(solid.name(), solid, matter);
-		mother.placeVolume(glog1);
+		//mother.placeVolume(glog1);
 		ns.addVolumeNS(glog1);
 		}
 		if(i==1){
