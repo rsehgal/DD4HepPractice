@@ -29,7 +29,7 @@
 		</Vector>
 	</Algorithm>
 
--
+
 	<PosPartSection label="">
 
 
@@ -39,16 +39,16 @@
                     <Translation x="0" y="0" z="100"/> 	                
 		</PosPart>
 	
-    
+<!--    
 		<PosPart copyNumber="1">
                     <rParent name="trackerAlgo:InnerTube1"/>
                     <rChild name="trackerAlgo:InnerTube2"/>
                     <Translation x="0" y="0" z="100"/> 
         </PosPart>
         
-    
+-->	    
 	</PosPartSection>
-	
+
 
 	<!--
         <PosPartSection label="">
