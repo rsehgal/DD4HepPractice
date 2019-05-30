@@ -16,22 +16,24 @@
   <IncludeSection>
     <Include ref="materials.xml"/>
     <Include ref="trackerAlgo.xml"/>
+    <Include ref="coneAlgo.xml"/>
   </IncludeSection>
 
   <PosPartSection label="">
     <PosPart copyNumber="1">
 	<rParent name="world_volume"/>
 	<rChild name="trackerAlgo:Tracker"/>
-	<Translation x="200" y="0" z="0"/>
+	<Translation x="250" y="0" z="0"/>
 	<!-- <rChild name="trackerAlgo:MotherOfAllBoxes"/> -->
    </PosPart>
   
    <PosPart copyNumber="2">
 	<rParent name="world_volume"/>
 	<rChild name="trackerAlgo:Tracker"/>
-	<Translation x="-200" y="0" z="0"/>
+	<Translation x="-250" y="0" z="0"/>
    </PosPart>
   
+
 
   </PosPartSection>
 

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<DDDefinition xmlns="http://www.cern.ch/cms/DDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cern.ch/cms/DDL ../../../DetectorDescription/Schema/DDLSchema.xsd">
+        <IncludeSection>
+	    <Include ref="materials.xml"/>
+	</IncludeSection>
+
+
+
+	<Algorithm name="coneAlgo">
+		<rParent name="world_volume"/> 
+		<Numeric name="TestValue"    value="100."/>
+		<String name="Material"      value="materials:Silicon"/>
+		<Vector name="InnerConeVector" type="string" nEntries="3">
+		      InnerCone1,InnerCone2,InnerCone3
+		</Vector>
+	</Algorithm>
+
+-
+	<PosPartSection label="">
+		<PosPart copyNumber="1">
+					<rParent name="world_volume"/>
+	                <rChild name="coneAlgo:InnerCone1"/>
+                    <Translation x="0" y="0" z="-100"/> 	                
+		</PosPart>
+	
+    
+		<PosPart copyNumber="1">
+                    <rParent name="world_volume"/>
+                    <rChild name="coneAlgo:InnerCone2"/>
+                    <Translation x="0" y="0" z="100"/> 
+        </PosPart>
+        
+		<PosPart copyNumber="1">
+                    <rParent name="world_volume"/>
+                    <rChild name="coneAlgo:InnerCone3"/>
+                    <Translation x="0" y="0" z="0"/> 
+        </PosPart>
+
+    
+	</PosPartSection>
+	
+
+	<!--
+        <PosPartSection label="">
+	    <PosPart copyNumber="2">
+        	<rParent name="tracker:Tracker"/>
+	        <rChild name="tube:TestTube"/>
+   	    </PosPart>
+  	</PosPartSection>	
+	-->
+
+
+</DDDefinition>
