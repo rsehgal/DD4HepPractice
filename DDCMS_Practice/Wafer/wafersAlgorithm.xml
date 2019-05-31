@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<DDDefinition xmlns="http://www.cern.ch/cms/DDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.cern.ch/cms/DDL ../../Schema/DDLSchema.xsd">
+
+
+ <IncludeSection>
+                <Include ref="materials.xml"/>
+  </IncludeSection>
+
+  <ConstantsSection label="wafersAlgorithm.xml" eval="true">
+    <Constant name="WaferSize"             value="167.4408*mm"/>
+    <Constant name="WaferThickness"        value="0.30*mm"/>
+    <Constant name="CellThicknessFine"     value="0.12*mm"/>
+    <Constant name="CellThicknessCoarse1"  value="0.20*mm"/>
+    <Constant name="CellThicknessCoarse2"  value="0.30*mm"/>
+    <Constant name="NumberOfCellsFine"     value="12"/>
+    <Constant name="NumberOfCellsCoarse"   value="8"/>
+    <Constant name="SensorSeparation"      value="1.00*mm"/>
+    <Constant name="MouseBite"             value="5.00*mm"/>
+
+  </ConstantsSection>
+
+ <Algorithm name="HGCal:DDHGCalWafer">
+
+    <rParent name="world_volume"/> 
+    <Numeric name="WaferSize"    value="[WaferSize]"/>
+    <Numeric name="WaferThick"   value="[WaferThickness]"/>
+    <Numeric name="CellThick"    value="[CellThicknessFine]"/>
+    <Numeric name="NCells"       value="[NumberOfCellsFine]"/>
+    <Numeric name="PosSensitive" value="0"/>
+    <String name="Material"      value="materials:Silicon"/>
+    <String name="FullWafer"      value="HGCalEEWafer0Fine"/>
+    <String name="SensorSeparation"      value="[SensorSeparation]"/>
+    <String name="MouseBite"      value="[MouseBite]"/>
+    
+ </Algorithm>
+ 
+ <PosPart copyNumber="1">
+      <rParent name="world_volume"/>
+      <rChild name="wafersAlgorithm:HGCalEEWafer0Fine"/>
+</PosPart>
+
+</DDDefinition>
